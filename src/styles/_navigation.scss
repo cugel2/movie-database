@@ -1,0 +1,74 @@
+/* Flex container */
+.header {
+  position: fixed;
+  background-color: #131416;
+  font-size: 35px;
+  color: white;
+  z-index: 999;
+}
+
+.logo {
+  width: 155px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.footer {
+  bottom: 0;
+  z-index: 100;
+  padding: 0.3% 0;
+}
+
+@media (min-width: 300px) and (max-width: 576px) {
+  .logo {
+    padding-top: 15px;
+  }
+  .slide-down-menu {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+
+    &.open {
+      max-height: 300px; // This value can be adjusted based on your menu's actual height
+      transition: max-height 0.5s ease-in;
+    }
+    .active pt-1 {
+      display: none;
+    }
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+
+    .bar {
+      background-color: white;
+      height: 3px;
+      width: 100%;
+      transition: transform 0.5s, opacity 0.5s, width 0.5s;
+    }
+
+    // This will rotate the first bar to form the top of the "X" and increase its width
+    &.open .bar:nth-child(1) {
+      transform: rotate(45deg) translateY(9px);
+      width: 120%; // increase to desired value
+    }
+
+    // This will hide the middle bar
+    &.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    // This will rotate the last bar to form the bottom of the "X" and increase its width
+    &.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translateY(-9px);
+      width: 120%; // increase to desired value
+    }
+  }
+}

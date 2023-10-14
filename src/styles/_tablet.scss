@@ -1,0 +1,27 @@
+@media (min-width: 576px) and (max-width: 768px) {
+  .card-img-top {
+    height: 70%;
+    width: 100%;
+  }
+
+  .card-title {
+    font-size: 15px !important;
+  }
+
+  .movie {
+    font-size: 13px !important;
+  }
+
+  .button,
+  .buttons {
+    font-size: 12px;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
